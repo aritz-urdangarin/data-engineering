@@ -1,0 +1,26 @@
+
+- name: COPY FILES
+  copy:
+    src: "{{ role_path }}/files"
+    dest: /home/user/
+
+
+- name: BUILD IMAGE
+  community.docker.docker_image:
+    name: cassandra:latest
+    source: build
+    build:
+      #dockerfile: /root/python3/Dockerfile
+      path: /home/user/files
+
+- name: RUN cassandra
+  docker_container:
+    name: cassandra
+    image: cassandra:latest
+    ports:
+      - "9042:9042"
+      - "7000:7000"
+    volumes:
+      - "/home/user/cassandra_data:/var/lib/cassandra"
+      - "/home/user/cassandra_logs:/var/log/cassandra"
+    detach: true

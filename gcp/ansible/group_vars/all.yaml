@@ -1,0 +1,10 @@
+# Variables globales aplicables a todos los hosts
+
+# Variable global para todo el inventario
+docker_debian_url: https://download.docker.com/linux/debian/gpg
+ansible_user: root
+
+# Variables de configuración para todas las máquinas
+gcp_project_id: "aritz-urdangarin"
+gcp_auth_kind: "serviceaccount"
+gcp_cred_file: "/root/gcp/aritz-urdangarin-3a39f0f48f77.json"

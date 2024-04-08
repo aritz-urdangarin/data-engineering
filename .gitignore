@@ -1,0 +1,22 @@
+# Local .terraform directories
+**/.terraform/*
+
+# .tfstate files
+*.tfstate
+*.tfstate.*
+
+# Crash log files
+crash.log
+
+# Local ansible logs
+ansible.log
+
+# Local ansible fact cache
+.ansible/*
+
+# Ansible retry files
+.retry
+
+*/hadoop-3.4.0.tar.gz
+
+gcp/aritz-urdangarin-3a39f0f48f77.json
