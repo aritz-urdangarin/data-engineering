@@ -4,9 +4,12 @@
   hosts: containers  # Ejecutar en el grupo 'containers'
   become: yes  # Utilizar privilegio de superusuario
   roles:
-    #- system_upgrade    # Ejecutar el rol para actualizar el sistema
-    #- install_docker    # Ejecutar el rol para instalar Docker
-    - hadoop      # crear contenedor 
+    #- system_upgrade    
+    #- install_docker    
+    #- hadoop  
+    #- zookeper   
+    #- solr
+    - elasticsearch
 
 #- name: ejecutar para hadoop container
 #  hosts: hadoop  # Ejecutar en el grupo 'containers'

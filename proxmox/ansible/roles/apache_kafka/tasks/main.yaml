@@ -13,16 +13,6 @@
       #dockerfile: /root/python3/Dockerfile
       path: /home/user/files
 
-- name: RUN zookeeper
-  docker_container:
-    name: zookeeper
-    image: zookeeper:3.9.2-jre-17
-    state: started
-    ports:
-      - "2181:2181"
-    #restart_policy: always
-    detach: yes
-
 - name: RUN kafka
   docker_container:
     name: kafka
