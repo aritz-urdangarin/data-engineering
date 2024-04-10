@@ -25,7 +25,7 @@ para decir a debian que tome el riesgo de hacer peticiones http
 
     #Irudi berria sortu: ​
 
-docker tag python3_webserver:latest sub.mydomain.com:5000/python_webserver:1.0.0​
+docker tag python3_webserver:latest sub.mydomain.com:5000/python_webserver:1.0.0
 
     #Irudi berria igo:​
 

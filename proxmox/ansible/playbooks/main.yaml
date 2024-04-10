@@ -6,10 +6,10 @@
   roles:
     #- system_upgrade    
     #- install_docker    
-    #- hadoop  
+    - hadoop  
     #- zookeper   
     #- solr
-    - elasticsearch
+    #- elasticsearch
 
 #- name: ejecutar para hadoop container
 #  hosts: hadoop  # Ejecutar en el grupo 'containers'
