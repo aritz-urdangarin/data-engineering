@@ -2,6 +2,11 @@ terraform {
   required_providers {
     proxmox = {
       source = "telmate/proxmox"
+      version = "3.0.1-rc1"
+    }
+    null = {
+      source = "hashicorp/null"
+      version = "3.2.2"
     }
   }
 }
@@ -59,7 +64,7 @@ resource "null_resource" "run_ansible_playbook" {
   }
 
   provisioner "local-exec" {
-    command = "ansible-playbook playbooks/main.yaml"
-    working_dir = "/root/datu-ingeneritza/proxmox/ansible"
+    command = "ansible-playbook playbooks/install-docker.yaml"
+    working_dir = "../ansible"
   }
 }
