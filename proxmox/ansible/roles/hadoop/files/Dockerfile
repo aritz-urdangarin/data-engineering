@@ -30,11 +30,12 @@ USER hadoop
 RUN ssh-keygen -q -t rsa -N "" -f /opt/hadoop/.ssh/id_rsa \
  && cat ~/.ssh/id_rsa.pub > ~/.ssh/authorized_keys 
 
-
-#RUN wget https://dlcdn.apache.org/hadoop/common/hadoop-3.4.0/hadoop-3.4.0.tar.gz -O hadoop.tar.gz \
-# && tar -xzvf hadoop.tar.gz -C /opt/hadoop --strip-components=1 && rm hadoop.tar.gz 
-COPY  hadoop-3.4.0.tar.gz .
-RUN   tar -xzvf hadoop-3.4.0.tar.gz -C /opt/hadoop --strip-components=1 && rm hadoop-3.4.0.tar.gz
+# opcion 1: descargar hadoop de internet
+RUN wget https://dlcdn.apache.org/hadoop/common/hadoop-3.4.0/hadoop-3.4.0.tar.gz -O hadoop.tar.gz \
+ && tar -xzvf hadoop.tar.gz -C /opt/hadoop --strip-components=1 && rm hadoop.tar.gz 
+# opcion 2: copiar hadoop ya descargado 
+# COPY  hadoop-3.4.0.tar.gz .
+# RUN   tar -xzvf hadoop-3.4.0.tar.gz -C /opt/hadoop --strip-components=1 && rm hadoop-3.4.0.tar.gz
 
 ENV JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 \
     HADOOP_HOME=/opt/hadoop \
