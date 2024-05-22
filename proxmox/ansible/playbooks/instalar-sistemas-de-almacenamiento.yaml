@@ -5,4 +5,4 @@
   become: yes  # Utilizar privilegio de superusuario
   roles:
     - hadoop
-    - apache_cassandra
+    - cassandra

@@ -4,5 +4,6 @@
   hosts: irensketa  # Ejecutar en el grupo 'containers'
   become: yes  # Utilizar privilegio de superusuario
   roles:
-    - nifi
-    #- kafka    
+    #- nifi
+    - zookeper
+    - kafka    

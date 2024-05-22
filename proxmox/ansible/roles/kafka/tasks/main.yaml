@@ -7,7 +7,7 @@
 
 - name: BUILD IMAGE
   community.docker.docker_image:
-    name: kafka:latest
+    name: kafka-pbl:1.0.0
     source: build
     build:
       #dockerfile: /root/python3/Dockerfile
@@ -16,7 +16,7 @@
 - name: RUN kafka
   docker_container:
     name: kafka
-    image: kafka:latest
+    image: kafka-pbl:1.0.0
     ports:
       - "9092:9092"
     volumes:
