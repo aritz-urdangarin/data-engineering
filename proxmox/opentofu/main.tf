@@ -48,11 +48,6 @@ resource "proxmox_lxc" "LXC" {
 
    # Añade la clave pública SSH al metadata del contenedor LXC (el simbolo del dolar es para de)
   ssh_public_keys   = "${file("${var.vm_ssh_key_path}")}"
-  # Provisionador local-exec
-  #provisioner "local-exec" {
-  #  command = "ansible-playbook playbooks/main.yaml -vvv"
-  #  working_dir = "/root/datu-ingeneritza/proxmox/ansible"
-  #}
 }
 resource "null_resource" "run_ansible_playbook" {
   # This resource depends on the Proxmox LXC containers being created
@@ -64,7 +59,7 @@ resource "null_resource" "run_ansible_playbook" {
   }
 
   provisioner "local-exec" {
-    command = "ansible-playbook playbooks/install-docker.yaml"
+    command = "ansible-playbook playbooks/instalar-docker.yaml"
     working_dir = "../ansible"
   }
 }
